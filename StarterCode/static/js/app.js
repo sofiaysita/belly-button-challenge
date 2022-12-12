@@ -54,15 +54,13 @@ function createScatter(id){
             }
         }
 
-        let scatterGraph = [
-            {
+        let scatterGraph = [{
             x:otuIDs,
             y:sampleValues,
             mode:'markers',
             marker: {color:otuIDs, size:sampleValues},
             text:otuLabels
-            }
-        ];
+            }];
 
         Plotly.newPlot("bubble", scatterGraph)
         })
@@ -89,17 +87,16 @@ function createBar(id){
         labels[i] = "OTU-" + labels[i] 
     }
  
-    let barGraph = [
-        {
+    let barGraph = [{
+        type: 'bar',
         x:values,
         y:labels,
+        orientation: 'h',
         mode:'markers',
-        marker: {size:16},
-        text:hoverText,
-        type: 'bar',
-        orientation: 'h'
-        }
-    ];
+        marker: {color: 'blue', width:5},
+        text:hoverText, 
+        }];
+        
     Plotly.newPlot("bar", barGraph)
     })
     // checking to see if function is running
